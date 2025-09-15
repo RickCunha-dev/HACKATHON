@@ -9,18 +9,22 @@
 }
 
 body {
-    width: 100%;
-    background-color: #000;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    background-color: #000;
+    color: #fff;
+}
+
+main {
+    flex: 1;
 }
 
 /* ===== Header ===== */
 header {
     width: 100%;
     background-color: #000;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #f0f0f0;
 }
 
@@ -29,12 +33,12 @@ header {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
-.logo {
-    display: flex;
-    width: 150px;
-    height: 60px;
+.logo img {
+    width: 204px;
+    height: 57px;
 }
 
 .nav-menu {
@@ -72,7 +76,7 @@ header {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 6px 30px;
     font-weight: 600;
     cursor: pointer;
     border: none;
@@ -124,7 +128,6 @@ header {
     background-image: url("../Imagens/explorar.png");
     background-size: cover;
     background-position: center;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,7 +162,6 @@ header {
 
 /* ===== Nav Explorar ===== */
 .nav-explorar {
-    margin-top: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -168,28 +170,26 @@ header {
     flex-wrap: wrap;
 }
 
-.nav-explorar .logo {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    background: url('../Imagens/explore.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.logo-explorar {
+    /*border: 1px solid red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
 }
 
-.nav-explorar .logo h3 {
+.logo-explorar h3 {
     font-weight: bolder;
     font-size: 35px;
 }
 
-.nav-explorar .logo h3 a {
+.logo-explorar h3 a {
     text-decoration: none;
     color: #fff;
 }
 
-/* Pesquisa */
 .search-container {
+    /*border: 1px solid red;*/
     flex: 1;
     display: flex;
     align-items: center;
@@ -206,12 +206,11 @@ header {
 
 .search-form input {
     width: 100%;
-    height: 41px;
+    height: 40px;
     border-radius: 15px;
     border: none;
     text-align: center;
     font-size: 20px;
-    padding: 0 15px;
 }
 
 .lupa {
@@ -225,14 +224,58 @@ header {
     color: #000;
 }
 
+/* ===== Botão Filtro ===== */
 .filtro {
-    background-color: white;
-    padding: 8px 50px;
-    border-radius: 25px;
+    position: relative;
+    display: inline-block;
     cursor: pointer;
+    background-color: #fff;
+    padding: 5px 50px;
+    border-radius: 25px;
     font-size: 16px;
     font-weight: bold;
-    white-space: nowrap;
+    color: black;
+}
+
+.filtro h3 {
+    margin: 0;
+}
+
+.filtro .opcoes {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+    top: 110%;
+    left: 30%;
+    transform: translateX(-50%); /* centraliza */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    min-width: 200px;
+    max-width: 90vw; 
+    overflow-wrap: break-word;
+}
+
+.filtro.active .opcoes {
+    display: flex;
+}
+
+.filtro .opcoes button {
+    padding: 8px;
+    border: none;
+    background: #f4f4f4;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.filtro .opcoes button:hover {
+    background: #ddd;
 }
 
 /* ===== Categorias ===== */
@@ -270,8 +313,8 @@ header {
 .perfil-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 50px 20px;
+    gap: 3%;
+    padding: 50px;
     background-color: #000;
 }
 
@@ -294,8 +337,8 @@ header {
     box-shadow: 0 0 10px rgba(240, 21, 21, 0.285), 0 0 20px rgba(216, 56, 16, 0.313);
   }
   to {
-    box-shadow: 0 0 20px rgba(255, 55, 0, 0.324), 0 0 40px rgba(255, 68, 0, 0.539);
-    }
+    box-shadow: 0 0 20px rgba(255, 55, 0, 0.324), 0 0 40px rgba(255, 68, 0, 0.539);
+  }
 }
 
 .perfil-card img {
@@ -306,76 +349,79 @@ header {
 }
 
 .perfil-info {
-    padding: 15px;
+    padding: 10%;
     line-height: 1.4;
     font-size: 16px;
 }
 
+.perfil-card .perfil-info a {
+    color: #717171;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.perfil-card .perfil-info a:hover {
+    color: #C64132;
+}
+
 /* ===== Footer ===== */
 footer {
+    width: 100%;
     background-color: #231F20;
     color: #fff;
-    padding: 40px 20px 20px;
+    padding: 20px;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
 }
 
-.footer-logo-img {
-    width: 150px;
-    height: auto;
-}
-
 .footer-links {
+    /*border: 1px solid red;*/
+    width: 50%;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     gap: 40px;
     flex-wrap: wrap;
 }
 
-.footer-column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-column a {
+.footer-links a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.footer-column a:hover {
+.footer-links a:hover {
     color: #C64132;
-}
-
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
-.social-icon {
+.social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.social-icon img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #111;
     transition: transform 0.3s ease;
+    margin-top: 5px;
 }
 
 .social-icon:hover {
@@ -402,163 +448,71 @@ footer {
         gap: 30px;
     }
 
-    .carrossel .titulo {
-        font-size: 28px;
-    }
-
-    .carrossel .paragrafo {
-        font-size: 22px;
-        max-width: 70%;
-    }
-
-    .nav-explorar .logo h3 {
-        font-size: 28px;
-    }
+    .carrossel .titulo { font-size: 28px; }
+    .carrossel .paragrafo { font-size: 22px; max-width: 70%; }
+    .nav-explorar .logo h3 { font-size: 28px; }
 }
 
-/* ===== Responsividade Mobile ===== */
 @media (max-width: 768px) {
-    /* ===== Header ===== */
+    /* Header */
     .header {
-        flex-direction: row; /* tudo na mesma linha */
-        justify-content: space-between; /* logo à esquerda, botões+menu à direita */
-        align-items: center;
-        width: 100%;
-        padding: 10px 20px;
+        flex-direction: row;
+        justify-content: flex-start; /* logo + hambúrguer na mesma linha */
+        align-items: center; 
+        padding: 8px 20px; 
+        gap: 10px;
     }
 
-    .logo {
-        font-size: 20px;
-        margin-bottom: 0;
-    }
+    .logo img { width: 180px; height: 60px; }
 
-    /* Botões e menu juntos */
-    .header-buttons {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+    /* Esconde os botões do header no mobile */
+    .header-buttons { display: none; }
 
-    .btn {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
+    /* Botão hambúrguer */
+    .nav-toggle { display: block; }
 
-    .btn-login {
-        border-radius: 4px;
-        margin-right: 0;
-    }
-
-    .btn-cadastro {
-        border-radius: 4px;
-    }
-
-    .nav-toggle {
-        display: block;
-        font-size: 28px;
-        margin-left: 5px;
-        cursor: pointer;
-    }
-
+    /* Menu mobile */
     .nav-menu {
-        position: absolute;
-        top: 60px; /* abaixo da header */
-        right: 0;
-        background-color: #111;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 10px 0;
-        border-radius: 5px;
-        z-index: 99;
+        position: absolute; 
+        top: 60px; 
+        right: 0; 
+        flex-direction: column; 
+        width: 200px; 
+        display: none; /* escondido por padrão */
+        padding: 10px 0; 
+        border-radius: 5px; 
+        background: #111; 
+        z-index: 99; 
     }
 
-    .nav-menu.active {
-        display: flex;
+    /* Exibe menu quando ativo */
+    .nav-menu.active { display: flex; }
+
+    .nav-menu a { 
+        margin: 10px 0; 
+        font-size: 16px; 
+        text-align: center; 
     }
 
-    .nav-menu a {
-        margin: 10px 0;
-        font-size: 16px;
-        text-align: center;
-    }
+    /* Carrossel */
+    .carrossel { height: auto; padding: 40px 20px; }
+    .carrossel .titulo { font-size: 24px; }
+    .carrossel .paragrafo { font-size: 18px; flex-direction: column; max-width: 90%; }
 
-    /* ===== Carrossel ===== */
-    .carrossel {
-        height: auto;
-        padding: 40px 20px;
-    }
+    /* Nav Explorar */
+    .nav-explorar { flex-direction: column; gap: 15px; padding: 20px; align-items: center; }
+    .nav-explorar .logo h3 { font-size: 24px; text-align: center; }
+    .search-form input { font-size: 16px; height: 36px; }
 
-    .carrossel .titulo {
-        font-size: 24px;
-    }
+    /* Filtros */
+    .filtro { padding: 6px 20px; font-size: 14px; }
+    .categoria-filtros button { font-size: 14px; padding: 6px 10px; margin-left: 0; }
 
-    .carrossel .paragrafo {
-        font-size: 18px;
-        flex-direction: column;
-        max-width: 90%;
-    }
+    /* Grid de perfis */
+    .perfil-grid { grid-template-columns: 1fr; padding: 30px 15px; gap: 20px; }
+    .perfil-info { font-size: 16px; text-align: center; }
 
-    /* ===== Nav Explorar ===== */
-    .nav-explorar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-        align-items: center;
-    }
-
-    .nav-explorar .logo h3 {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .search-form input {
-        font-size: 16px;
-        height: 36px;
-    }
-
-    .filtro {
-        padding: 6px 20px;
-        font-size: 14px;
-    }
-
-    /* ===== Categorias ===== */
-    .categoria-filtros button {
-        font-size: 14px;
-        padding: 6px 10px;
-        margin-left: 0;
-    }
-
-    /* ===== Grid de perfis ===== */
-    .perfil-grid {
-        grid-template-columns: 1fr;
-        padding: 30px 15px;
-        gap: 20px;
-    }
-
-    .perfil-info {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    /* ===== Footer ===== */
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-column {
-        align-items: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
+    /* Footer */
+    .footer-content { flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .footer-links { flex-direction: column; gap: 15px; }
 }

@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto; font-weight: weight; font-style: normal;
+}
+
+body {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px; 
+    overflow-x: hidden;
+}
+
+/* --- LOGO --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: #000;
+    
+    box-shadow: 0px 4px 10px #E53935;
+    z-index: 10;
+    animation: neon 3s infinite alternate ease-in-out;
+}
+
+header img {
+    height: 60px; 
+    width: auto;
+}
+
+@keyframes neon {
+    0% {
+        border-bottom-color: #E53935;
+        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+    } 
+    50% {
+        border-bottom-color: #af1103;
+        box-shadow: 0px 0px 15px #a20e00, 0px 0px 30px #ff6f61;
+    }
+    100% {
+        border-bottom-color: #E53935;
+        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+    }
+}
+
+/* --- CONTEÚDO --- */
+.container {
+    flex: 1; 
+    display: flex; 
+    align-items: stretch; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imagem {
+    flex: 1;
+    background: url(../Imagens/redefinir\ senha.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-width: 300px;
+    min-height: 500px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 40px;
+    margin-top: -100px;
+}
+
+.imagem img { 
+width: 100%; 
+height: 100%; 
+object-fit: contain; 
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px #E53935, 0 0 30px #E53935;
+    }
+
+    100% {
+        text-shadow: 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61;
+    }
+}
+
+.formulario {
+    flex: 1;
+    padding: 40px;
+    max-width: 500px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+    font-weight: bolder;
+    gap: 30px;
+}
+
+.formulario h1 {
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff;
+    position: relative;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.formulario h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 4px;
+    width: 100%;
+    background-color: #E53935;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 3px 13px #E53935;
+}
+
+.formulario h1:hover::after {
+    transform: scaleX(0.4);
+}
+
+.frase {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+    font-weight: normal;
+}
+
+.formulario label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: 600;
+    ;
+}
+
+.formulario input {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 110%;
+    max-width: 400px;
+    border-radius: 12px;
+    border: 2px solid #444;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.formulario input::placeholder {
+    color: #888;
+    font-size: 15px;
+}
+
+.formulario input:focus {
+    border: 2px solid #E53935;
+    box-shadow: 0px 0px 10px #E53935, inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #222;
+}
+
+.enviar-btn {
+    padding: 7px 40px;
+    margin: 0;
+    cursor: pointer;
+    width: 200px;
+    max-width: 200px;
+    background: #E53935;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    border: 2px solid #fff;
+    animation: neonBtn 2.5s infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+    align-self: stretch;
+    margin-left: 4px;
+}
+
+.enviar-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes neonBtn {
+    0% {
+        background: #E53935;
+        border-color: #E53935;
+        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
+    }
+
+    50% {
+        background: #ff6f61;
+        border-color: #ff6f61;
+        box-shadow: 0 0 15px #ff6f61, 0 0 35px #ff6f61;
+    }
+
+    100% {
+        background: #E53935;
+        border-color: #E53935;
+        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
+    }
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .imagem {
+        min-height: 300px;
+        margin-right: 0;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .formulario {
+        padding: 20px;
+    }}

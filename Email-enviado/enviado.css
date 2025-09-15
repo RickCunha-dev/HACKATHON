@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto; 
+    font-weight: weight; 
+    font-style: normal;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: #000;
+    
+    box-shadow: 0px 4px 10px #E53935;
+    z-index: 10;
+    animation: neon 3s infinite alternate ease-in-out;
+}
+
+header img {
+    height: 60px; 
+    width: auto;
+}
+
+@keyframes neon {
+    0% {
+        border-bottom-color: #E53935;
+        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+    } 
+    50% {
+        border-bottom-color: #af1103;
+        box-shadow: 0px 0px 15px #a20e00, 0px 0px 30px #ff6f61;
+    }
+    100% {
+        border-bottom-color: #E53935;
+        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+    }
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.texto {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+
+}
+
+.texto .acesse {
+    font-size: 19px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.texto .ok-btn {
+    padding: 7px 40px;
+    margin: 0;
+    cursor: pointer;
+    width: 200px;
+    max-width: 200px;
+    background: #C64132;
+;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    border: 2px solid #C64132;
+    animation: neonBtn 2.5s infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+    align-self: stretch;
+    margin-left: 4px;
+
+}

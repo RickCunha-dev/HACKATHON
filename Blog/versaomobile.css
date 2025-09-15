@@ -1,0 +1,23 @@
+/* versão mobile */
+@media (max-width: 768px) {
+    .carrossel {
+        height: auto; 
+        padding: 40px 20px; 
+    }
+
+    .carrossel .titulo {
+        font-size: 32px;   
+        margin-bottom: 15px;
+    }
+
+    .carrossel .paragrafo {
+        font-size: 16px;
+        margin-bottom: 20px;
+        max-width: 100%;  
+    }
+
+    .carrossel .btn-comecar {
+        font-size: 16px;
+        padding: 10px 28px; 
+    }
+}

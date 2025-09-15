@@ -6,6 +6,7 @@
     <title>Inspire-se em quem está brilhando</title>
     <link rel="stylesheet" href="inspire.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -22,162 +23,155 @@
                 <a href="#" class="btn btn-login">Login</a>
                 <a href="#" class="btn btn-cadastro">Cadastre-se</a>
             </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+                <span class="material-icons">menu</span>
+            </button>
         </div>
-
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
-            <span class="material-icons">menu</span>
-        </button>
     </header>
 
-    <!-- Carrossel -->
-    <div class="carrossel">
-        <div class="titulo">
-            <h1>Inspire-se em quem já está brilhando</h1>
-        </div>
-        <div class="paragrafo">
-            <p>Explore uma seleção de <span>portifólios</span> criados por <span>profissionais</span> talentosos. Veja na prática como nossa plataforma 
-            pode transformar a <span>apresentação</span> do seu <span>trabalho</span> e abrir portas para novas oportunidades.</p>
-        </div>
-    </div>
+    <main>
 
-    <!-- Nav Explorar -->
-    <div class="nav-explorar">
-        <div class="logo">
+        <div class="carrossel">
+            <div class="titulo">
+                <h1>Inspire-se em quem já está brilhando</h1>
+            </div>
+            <div class="paragrafo">
+                <p>Explore uma seleção de <span>portifólios</span> criados por <span>profissionais</span> talentosos. Veja na prática como nossa plataforma 
+                pode transformar a <span>apresentação</span> do seu <span>trabalho</span> e abrir portas para novas oportunidades.</p>
+            </div>
+        </div>
+
+        <div class="logo-explorar">
            <h3><a href="#">Explorar</a></h3>
         </div>
 
-        <div class="search-container">
-            <form class="search-form">
-                <input type="text" placeholder="Pesquisar" aria-label="Pesquisa">
-                <button class="lupa" type="submit">
-                    <span class="material-icons">search</span>
-                </button>
-            </form>
+        <div class="nav-explorar">
+
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="Pesquisar" aria-label="Pesquisa">
+                    <button class="lupa" type="submit">
+                        <span class="material-icons">search</span>
+                    </button>
+                </form>
+            </div>
         </div>
 
-        <div class="filtro">
-            <h3>Filtro</h3>
+        <div class="categoria-filtros">
+            <button id="todos-cat">Todos</button>
+            <button id="designer-cat">Designer</button>
+            <button id="ux-ui-cat">UX/UI</button>
+            <button id="dev-cat">Dev</button>
+            <button id="fotografo-cat">Fotógrafo</button>
+            <button id="marketing-cat">Marketing</button>
+            <button id="video-maker-cat">Video Maker</button>
         </div>
-    </div>
 
-    <!-- Categorias -->
-    <div class="categoria-filtros">
-        <button id="designer">Designer</button>
-        <button id="ux-ui">UX/UI</button>
-        <button id="dev">Dev</button>
-        <button id="fotografo">Fotográfo</button>
-        <button id="marketing">Marketing</button>
-        <button id="video-maker">Video Maker</button>
-    </div>
 
-    <!-- Perfis -->
-    <section class="perfil-grid">
-        <article class="perfil-card">
+       <section class="perfil-grid">
+
+        <article class="perfil-card" data-categoria="dev">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> Sistema Web</p>
+                <p><strong>Profissional:</strong><a href="#"> João Silva</a></p>
             </div>
         </article>
 
-        <article class="perfil-card">
+        <article class="perfil-card" data-categoria="designer">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> Identidade Visual</p>
+                <p><strong>Profissional:</strong><a href="#"> Maria Oliveira</a></p>
             </div>
         </article>
 
-        <article class="perfil-card">
+
+        <article class="perfil-card" data-categoria="ux-ui">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> App Delivery</p>
+                <p><strong>Profissional:</strong><a href="#"> Lucas Andrade</a></p>
+            </div>
+        </article>
+        
+        <article class="perfil-card" data-categoria="ux-ui">
+            <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
+            <div class="perfil-info">
+                <p><strong>Projeto:</strong> App Delivery</p>
+                <p><strong>Profissional:</strong><a href="#"> Lucas Andrade</a></p>
+            </div>
+        </article>
+        
+        <article class="perfil-card" data-categoria="ux-ui">
+            <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
+            <div class="perfil-info">
+                <p><strong>Projeto:</strong> App Delivery</p>
+                <p><strong>Profissional:</strong><a href="#"> Lucas Andrade</a></p>
             </div>
         </article>
 
-        <article class="perfil-card">
+
+        <article class="perfil-card" data-categoria="marketing">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> Campanha Digital</p>
+                <p><strong>Profissional:</strong><a href="#"> Ana Costa</a></p>
             </div>
         </article>
 
-        <article class="perfil-card">
+
+        <article class="perfil-card" data-categoria="fotografo">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> Ensaio Fotográfico</p>
+                <p><strong>Profissional:</strong><a href="#"> Pedro Rocha</a></p>
             </div>
         </article>
 
-        <article class="perfil-card">
-            <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
-            <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
-            </div>
-        </article>
 
-        <article class="perfil-card">
+        <article class="perfil-card" data-categoria="video-maker">
             <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
             <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
+                <p><strong>Projeto:</strong> Produção de Vídeo</p>
+                <p><strong>Profissional:</strong><a href="#"> Juliana Martins</a></p>
             </div>
         </article>
+        <article class="perfil-card" data-categoria="video-maker">
+            <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
+            <div class="perfil-info">
+                <p><strong>Projeto:</strong> Produção de Vídeo</p>
+                <p><strong>Profissional:</strong><a href="#"> Juliana Martins</a></p>
+            </div>
+        </article>
+</section>
 
-        <article class="perfil-card">
-            <img src="../Imagens/imagem.jpg" alt="Imagem do Profissional">
-            <div class="perfil-info">
-                <p><strong>Nome:</strong> Ricardo Wemerson</p>
-                <p><strong>Profissional:</strong> Developer Full stack</p>
-                <p><strong>Nicho:</strong> Front-End</p>
-            </div>
-        </article>
-    </section>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="../Imagens/Logo padrão.png" alt="logo-infinity" class="footer-logo-img">
-            </div>
-            
-            <div class="footer-links">
-                <div class="footer-column">
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                   <img src="../Imagens/Logo padrão.png">
+                </div>
+                <div class="footer-links">
                     <a href="#">Home</a>
                     <a href="#">Explorar</a>
                     <a href="#">Blog</a>
-                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Privacidade</a>
+                </div>
+                <div class="social-media">
+                    <span>Rede social</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><img src="../Icones/instagram.png"></a>
+                        <a href="#" class="social-icon"><img src="../Icones/whatsapp.png"></a>
+                        <a href="#" class="social-icon"><img src="../Icones/linkedin.png"></a>
+                    </div>
                 </div>
             </div>
-
-            <div class="footer-social">
-                <span class="social-label">rede social</span>
-                <div class="social-icons">
-                    <a href="#" class="social-icon instagram">
-                        <img src="../Imagens/instagram.png" alt="Instagram">
-                    </a>
-                    <a href="#" class="social-icon whatsapp">
-                        <img src="../Imagens/whatsapp.png" alt="WhatsApp">
-                    </a>
-                    <a href="#" class="social-icon linkedin">
-                        <img src="../Imagens/linkedin.png" alt="LinkedIn">
-                    </a>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2025 Infinity School. Todos os direitos reservados.</p>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Infinity. Todos os direitos reservados.</p>
         </div>
     </footer>
 

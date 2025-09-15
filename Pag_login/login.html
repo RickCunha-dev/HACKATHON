@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="loginresponsivo.css">
+</head>
+<body>
+    <header class="logo">
+    <a href="#">
+        <!--<span class="logo-in">IN</span>
+        <span class="logo-text">INFINITY SCHOOL</span>-->
+        <a href="#"> <img src="../Imagens/Logo padrão.png" alt="logo-infinity" class="logo-in"> </a>
+    </a>
+</header>
+
+    <div class="container">
+        <div class="image">
+           
+        </div>
+
+        <div class="formulario">
+            <h1>Conecte-se</h1>
+            <form>
+
+                <label for="cpf">Login (CPF/CNPJ)</label><br>
+                <input id="cpf" name="cpf" type="tel" maxlength="18" placeholder=""><br><br>
+                
+                <label for="senha">Senha</label><br>
+                <div class="input-olho">
+                    <input id="senha" name="senha" type="password">
+                    <img src="../Icones/olhofechado.png" alt="Mostrar senha" class="olhinho">
+                </div><br><br>
+
+                <div class="btnForm">
+                <button type="submit" class="btn-cadastro">Login</button>
+                </div>
+            </form>
+
+            <div class="separador">
+                <span class="ou">ou</span>
+            </div>
+
+            <div class="botoes-redes-socias">
+                <a href="#" class="google">
+                    <img src="../Icones/search.png" alt="Entrar com Google"></a>
+                <a href="#" class="appel">
+                    <img src="../Icones/apple-logo.png" alt="Entrar com Apple"></a>
+                
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
