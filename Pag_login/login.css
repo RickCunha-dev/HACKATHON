@@ -126,6 +126,7 @@ body {
     width: 100%;
     border-radius: 12px;
     border: 2px solid #444;
+    font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     outline: none;
     transition: all 0.3s ease;
@@ -179,7 +180,7 @@ body {
 /* BOTÃO */
 .btn-login {
     padding: 8px;
-    width: 120px;
+    width: 150px;
     background: #E53935;
     color: #fff;
     font-weight: 800;
@@ -218,8 +219,8 @@ body {
 }
 
 .botoes-redes-socias img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .botoes-redes-socias a {
@@ -244,14 +245,14 @@ body {
     }
     .formulario h1 { font-size: 28px; }
     .formulario input { font-size: 16px; padding: 10px; }
-    .btn-login { font-size: 14px; width: 100px; margin: 16px auto 4% auto; }
+    .option-links {margin: 10px;}
+    .btn-login { font-size: 14px; width: 150px; margin: 16px auto 4% auto; }
     .ou { font-size: 24px; }
     .botoes-redes-socias a { padding: 5px 5px; }
-    .botoes-redes-socias img { width: 18px; height: 18px; }
+    .botoes-redes-socias img { width: 30px; height: 30px; }
 }
 
-/* Celulares */
-@media (max-width: 768px) {
+
 /* Celulares */
 @media (max-width: 768px) {
     .formulario {
@@ -274,7 +275,7 @@ body {
     }
     .formulario h1 { font-size: 26px; }
     .formulario input { font-size: 18px; padding: 12px; }
-    .btn-login { font-size: 16px; width: 120px; margin: 16px auto; }
+    .btn-login { font-size: 16px; width: 120px; margin: 40px auto; }
     .ou { font-size: 28px; }
     .botoes-redes-socias { justify-content: center; gap: 16px; margin-top: 12px; }
     .botoes-redes-socias a { padding: 8px 8px; }
@@ -300,39 +301,7 @@ body {
     .formulario h1 { font-size: 28px; }
     .formulario input { font-size: 16px; padding: 10px; }
     .label {font-size: 16px;}
-    .btn-login { font-size: 14px; width: 100px; margin: 12px auto; }
-    .ou { font-size: 26px; }
-    .botoes-redes-socias { justify-content: center; gap: 12px; }
-    .botoes-redes-socias a { padding: 6px 6px; }
-    .botoes-redes-socias img { width: 18px; height: 18px; }
-}
-
-}
-
-/* Pequenos celulares */
-@media (max-width: 480px) {
-    .container { flex-direction: column; align-items: center; }
-    .image { display: none; }
-    .formulario {
-        max-width: 300px;
-        padding: 16px 12px;
-        gap: 10px;
-        margin: 0 auto;
-        align-items: center;
-    }
-    .option-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        border: 1px solid red;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-    .option-links a { margin-bottom: 0; font-size: 15px;}
-    .formulario h1 { font-size: 30px; }
-    .formulario input { font-size: 16px; padding: 10px; }
-    .btn-login { font-size: 14px; width: 100px; margin: 12px auto; }
+    .btn-login { font-size: 14px; width: 120px; }
     .ou { font-size: 26px; }
     .botoes-redes-socias { justify-content: center; gap: 12px; }
     .botoes-redes-socias a { padding: 6px 6px; }
