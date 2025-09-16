@@ -93,7 +93,7 @@ body {
 .formulario {
     /*border: 1px solid red;*/
     flex: 2;
-    padding: 0 10px;
+    padding: 0 20px;
     max-width: 500px;
     margin-left: 40px;
     display: flex;
@@ -106,14 +106,15 @@ body {
 
 
 .formulario h1 {
+    /*border: 1px solid red;*/
     font-family: Arial, sans-serif;
     font-weight: bolder;
     font-size: 30px;
     margin-bottom: 15%;
     color: #fff;
     position: relative;
-    margin-right: 180px;
-    width: fit-content;
+    margin-right: 10%;
+    width: 75%;
 }
 
 .formulario h1::after {
@@ -122,7 +123,7 @@ body {
     left: 0;
     bottom: -8px;
     height: 4px; 
-    width: 100%;
+    width: 65%;
     background-color: #E53935;
     transform: scaleX(1); 
     transform-origin: left; 

@@ -1,22 +1,20 @@
+// Mostrar/ocultar senha
 document.querySelectorAll('.olhinho').forEach(olho => {
     olho.addEventListener('click', () => {
+        const input = olho.previousElementSibling;
+        if (input.type === 'password') {
+            input.type = 'text';
+            olho.src = '../Icones/olhoaberto.png';
+        } else {
+            input.type = 'password';
+            olho.src = '../Icones/olhofechado.png';
+        }
+    });
+});
 
-    const input = olho.previousElementSibling;
-    
-    if (input.type === 'password') {
-        input.type = 'text';
-        olho.src = '../Icones/olhoaberto.png'; // ícone aberto
-    } else {
-        input.type = 'password';
-        olho.src = '../Icones/olhofechado.png'; // ícone fechado
-    }
-
-    })
-})
-
+// Mascara CPF/CNPJ
 document.getElementById('cpf').addEventListener('input', function (e) {
     var valor = e.target.value.replace(/\D/g, '');
-
     if (valor.length <= 11) { // CPF
         valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
         valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
@@ -27,6 +25,5 @@ document.getElementById('cpf').addEventListener('input', function (e) {
         valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
         valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
     }
-
     e.target.value = valor;
 });

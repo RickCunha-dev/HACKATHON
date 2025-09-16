@@ -457,7 +457,7 @@ footer {
     /* Header */
     .header {
         flex-direction: row;
-        justify-content: flex-start; /* logo + hambúrguer na mesma linha */
+        justify-content: space-between; 
         align-items: center; 
         padding: 8px 20px; 
         gap: 10px;
@@ -495,24 +495,62 @@ footer {
     }
 
     /* Carrossel */
-    .carrossel { height: auto; padding: 40px 20px; }
-    .carrossel .titulo { font-size: 24px; }
-    .carrossel .paragrafo { font-size: 18px; flex-direction: column; max-width: 90%; }
+    .carrossel { 
+        height: auto; 
+        padding: 40px 20px; 
+    }
+        .carrossel .titulo { 
+        font-size: 24px; 
+    }
+        .carrossel .paragrafo { 
+        font-size: 18px; 
+        flex-direction: column; 
+        max-width: 90%; 
+    }
 
     /* Nav Explorar */
-    .nav-explorar { flex-direction: column; gap: 15px; padding: 20px; align-items: center; }
-    .nav-explorar .logo h3 { font-size: 24px; text-align: center; }
-    .search-form input { font-size: 16px; height: 36px; }
+    .nav-explorar { 
+        flex-direction: column; 
+        gap: 15px; padding: 20px; 
+        align-items: center; 
+    }
+    .nav-explorar .logo h3 { 
+        font-size: 24px; 
+        text-align: center; 
+    }
+    .search-form input { 
+        font-size: 16px; 
+        height: 36px; 
+    }
 
     /* Filtros */
-    .filtro { padding: 6px 20px; font-size: 14px; }
-    .categoria-filtros button { font-size: 14px; padding: 6px 10px; margin-left: 0; }
+    .filtro { 
+        padding: 6px 20px; 
+        font-size: 14px; 
+    }
+    .categoria-filtros button { 
+        font-size: 14px; 
+        padding: 6px 10px; 
+        margin-left: 0; 
+    }
 
     /* Grid de perfis */
-    .perfil-grid { grid-template-columns: 1fr; padding: 30px 15px; gap: 20px; }
-    .perfil-info { font-size: 16px; text-align: center; }
+    .perfil-grid { 
+        grid-template-columns: 1fr; 
+        padding: 30px 15px; 
+        gap: 20px; }
+    .perfil-info { 
+        font-size: 16px; 
+        text-align: center; 
+    }
 
     /* Footer */
-    .footer-content { flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-    .footer-links { flex-direction: column; gap: 15px; }
+    .footer-content { 
+        flex-direction: column;
+        align-items: center; gap: 20px; text-align: center; 
+    }
+    .footer-links {  
+        flex-direction: column; 
+        gap: 15px; 
+    }
 }
