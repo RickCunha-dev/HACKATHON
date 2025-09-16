@@ -69,7 +69,8 @@ header {
 .nav-menu a:hover::after {
     width: 100%;
 }
-/* Remover underline para botões clonados e ícone */
+
+
 .nav-menu .btn,
 .nav-menu .user-btn { position: relative; }
 .nav-menu .btn::after,
@@ -123,24 +124,19 @@ header {
 }
 
 .user-btn {
-    width: 44px;
-    height: 44px;
-    border: 1px solid #fff;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
-    transition: background .3s, transform .3s, border-color .3s;
+    font-size: 22px;
+    padding: 4px;
+    transition: color .3s, transform .3s;
 }
 
 .user-btn:hover {
-    background: #C64132;
-    border-color: #C64132;
-    transform: scale(1.05);
-    animation: neonLaranja 1s infinite alternate;
+    color: #C64132;
+    transform: scale(1.08);
 }
 
 @keyframes neonLaranja {
@@ -667,54 +663,42 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Header */
+    /* Header central com logo */
     .header {
         flex-direction: row;
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 8px 20px; 
+        justify-content: center;
+        align-items: center;
+        padding: 8px 60px;
         gap: 10px;
+        position: relative;
     }
+    .logo img { width: 180px; height: 60px; }
+    .header-buttons { display:none; }
+    .nav-toggle { display:block; position:fixed; top:12px; right:20px; z-index:250; }
 
-    .logo img { 
-        width: 180px; 
-        height: 60px; 
+    /* Menu mobile fullscreen */
+    .nav-menu { position:fixed; top:0; left:0; right:0; bottom:0; width:100vw; height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:22px; background:#000; padding:130px 30px 70px; z-index:120; opacity:0; pointer-events:none; transform:translateY(8px); transition:opacity .28s ease, transform .32s ease; overflow-y:auto; scrollbar-width:none; }
+    .nav-menu::-webkit-scrollbar { display: none; }
+    .nav-menu.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
-
-    /* Esconde os botões do header no mobile */
-    .header-buttons { 
-        display: none; 
+    body.menu-open { overflow: hidden; }
+    .nav-menu a, .nav-menu .btn, .nav-menu .user-btn {
+        width: 70%;
+        max-width: 280px;
+        padding: 14px 18px;
     }
-
-    /* Botão hambúrguer */
-    .nav-toggle { 
-        display: block; 
-    }
-
-    /* Menu mobile */
-    .nav-menu {
-        position: absolute; 
-        top: 60px; 
-        right: 0; 
-        flex-direction: column; 
-        width: 200px; 
-        display: none; 
-        padding: 10px 0; 
-        border-radius: 5px; 
-        background: #111; 
-        z-index: 99; 
-    }
-
-    /* Exibe menu quando ativo */
-    .nav-menu.active { 
-        display: flex; 
-    }
-
     .nav-menu a { 
-        margin: 15px; 
-        font-size: 16px; 
+        margin: 0; 
+        font-size: 18px; 
         text-align: center; 
     }
+    .nav-menu .btn { width: 70%; max-width:260px; }
+    .nav-menu .user-btn.__cloned { margin: 0 auto 0; padding: 10px 0; }
+    .mobile-logo-wrapper { position:absolute; top:48px; left:50%; transform:translateX(-50%); display:flex; justify-content:center; align-items:center; pointer-events:none; animation:fadeIn .4s ease; }
+    .mobile-logo-wrapper img { max-width:160px; height:auto; }
 
     /* Botões quando aparecem dentro do menu */
     .nav-menu .btn {

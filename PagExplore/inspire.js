@@ -2,12 +2,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Menu hambúrguer =====
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+
+  function openMenu() {
+    if (!navToggle || !navMenu) return;
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.classList.add('active');
+    navMenu.classList.add('active');
+    document.body.classList.add('menu-open');
+     injectMobileLogo();
+  }
+
+  function closeMenu() {
+    if (!navToggle || !navMenu) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      navToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
+      expanded ? closeMenu() : openMenu();
+    });
+
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.closest('a') || e.target.closest('.btn') || e.target.closest('.user-btn')) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
     });
   }
 
@@ -58,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Se largura > 768 e havia clones, removê-los
     if (window.innerWidth > 768) {
       if (existingClones.length) existingClones.forEach(c => c.remove());
+      const injected = navMenu.querySelector('.mobile-logo-wrapper');
+      if (injected) injected.remove();
       return;
     }
     // Mobile: se já existem clones, não duplicar
@@ -73,4 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', syncMobileButtons);
   syncMobileButtons();
+
+  function injectMobileLogo() {
+    if (window.innerWidth > 768 || !navMenu) return;
+    if (navMenu.querySelector('.mobile-logo-wrapper')) return;
+    const originalLogo = document.querySelector('.logo img');
+    if (!originalLogo) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'mobile-logo-wrapper';
+    const img = originalLogo.cloneNode(true);
+    img.removeAttribute('width');
+    img.removeAttribute('height');
+    wrap.appendChild(img);
+    navMenu.prepend(wrap);
+  }
 });
