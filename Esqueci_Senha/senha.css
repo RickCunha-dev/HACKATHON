@@ -3,7 +3,9 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto; font-weight: weight; font-style: normal;
+    font-optical-sizing: auto; 
+    font-weight: weight; 
+    font-style: normal;
 }
 
 body {
@@ -61,37 +63,31 @@ header img {
     align-items: stretch; 
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
 
 .imagem {
-    flex: 1;
-    background: url(../Imagens/redefinir\ senha.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    min-width: 300px;
-    min-height: 500px;
+    flex: 2.5; 
+    background: url(../Imagens/redefinir\ senha.png) left 20% top 0 / contain no-repeat;
+    min-width: 320px;
+    min-height: 750px; 
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    margin-right: 40px;
-    margin-top: -100px;
 }
 
 .imagem img { 
-width: 100%; 
-height: 100%; 
-object-fit: contain; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
 }
 
 @keyframes pulse {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.7;
     }
-
     50% {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 0.3;
@@ -102,7 +98,6 @@ object-fit: contain;
     0% {
         text-shadow: 0 0 20px #E53935, 0 0 30px #E53935;
     }
-
     100% {
         text-shadow: 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61;
     }
@@ -163,7 +158,6 @@ object-fit: contain;
     margin-bottom: 8px;
     color: #fff;
     font-weight: 600;
-    ;
 }
 
 .formulario input {
@@ -173,15 +167,16 @@ object-fit: contain;
     font-weight: 600;
     margin-bottom: 30px;
     margin-top: 10px;
-    padding: 10px;
-    width: 110%;
-    max-width: 400px;
+    padding: 12px 14px;
+    width: 100%; /* evitar overflow */
+    max-width: 420px;
     border-radius: 12px;
     border: 2px solid #444;
     color: #fff;
     outline: none;
     transition: all 0.3s ease;
     box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
 .formulario input::placeholder {
@@ -196,11 +191,10 @@ object-fit: contain;
 }
 
 .enviar-btn {
-    padding: 7px 40px;
-    margin: 0;
+    padding: 10px 40px;
     cursor: pointer;
     width: 200px;
-    max-width: 200px;
+    max-width: 220px;
     background: #E53935;
     color: #fff;
     text-align: center;
@@ -208,12 +202,11 @@ object-fit: contain;
     font-weight: 800;
     font-size: 18px;
     border-radius: 25px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px; /* centraliza */
     border: 2px solid #fff;
     animation: neonBtn 2.5s infinite alternate ease-in-out;
     transition: all 0.3s ease;
-    align-self: stretch;
-    margin-left: 4px;
+    display: block;
 }
 
 .enviar-btn:hover {
@@ -226,13 +219,11 @@ object-fit: contain;
         border-color: #E53935;
         box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
     }
-
     50% {
         background: #ff6f61;
         border-color: #ff6f61;
         box-shadow: 0 0 15px #ff6f61, 0 0 35px #ff6f61;
     }
-
     100% {
         background: #E53935;
         border-color: #E53935;
@@ -241,19 +232,26 @@ object-fit: contain;
 }
 
 /* --- Responsivo --- */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
+@media (max-width: 900px) {
+    .container { 
+        flex-direction: column; 
+        padding: 20px 18px; 
+        gap: 20px; 
     }
-
-    .imagem {
-        min-height: 300px;
-        margin-right: 0;
-        margin-bottom: 30px;
-        width: 100%;
+    .imagem { 
+        width: 100%; 
+        margin: 0 0 22px; 
+        min-height: 400px; 
+        background-position: center top; 
     }
+    .formulario { 
+        max-width: 600px; 
+        width: 100%; 
+    }
+}
 
-    .formulario {
-        padding: 20px;
-    }}
+@media (max-width: 520px) {
+    .imagem { min-height: 340px; }
+    .enviar-btn { width: 100%; max-width: 100%; }
+    .formulario input { max-width: 100%; }
+}

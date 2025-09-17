@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Redefinir Senha - Infinity School</title>
-    <script href="senha2.js"></script>
+    <script src="senha2.js" defer></script>
     <link rel="stylesheet" href="senha2.css">
 </head>
 <body>
@@ -19,13 +19,13 @@
 
     <div class="container">
         <div class="imagem">
-
+            <img src="../Imagens/redefinir senha.png" alt="Ilustração de um cadeado e chave para redefinir a senha">
         </div>
 
         <div class="formulario">
-            <h1>Redefinir Senha</h1>
-            
+    
             <form>
+                <h1>Redefinir Senha</h1>
                 <label for="senha">Senha</label><br>
                 <div class="input-olho">
                     <input id="senha" name="senha" type="password">
@@ -36,10 +36,12 @@
                 <div class="input-olho">
                     <input id="confirmarSenha" name="ConfirmarSenha" type="password">
                     <img src="../Icones/olhofechado.png" alt="Mostrar senha" class="olhinho">
-                </div><br><br>
+                </div>
+
+                 <button class="enviar-btn">Enviar</button>
             </form>
 
-            <button class="enviar-btn">Enviar</button>
+           
         </div>
     </div>
 </body>
