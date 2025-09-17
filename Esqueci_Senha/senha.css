@@ -1,257 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
+
+/* RESET */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto; 
-    font-weight: weight; 
-    font-style: normal;
 }
 
 body {
-    position: relative;
-    background-color: #000;
+    background: #000;
     color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 120px; 
+    padding-top: 120px;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* --- LOGO --- */
+/* imagem de fundo */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 120px 45% 0 0;
+    background: url('../Imagens/redefinir senha.png') left center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* --- HEADER --- */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    background-color: #000;
-    
+    background: #000;
     box-shadow: 0px 4px 10px #E53935;
     z-index: 10;
-    animation: neon 3s infinite alternate ease-in-out;
 }
 
 header img {
-    height: 60px; 
+    height: 60px;
     width: auto;
-}
-
-@keyframes neon {
-    0% {
-        border-bottom-color: #E53935;
-        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
-    } 
-    50% {
-        border-bottom-color: #af1103;
-        box-shadow: 0px 0px 15px #a20e00, 0px 0px 30px #ff6f61;
-    }
-    100% {
-        border-bottom-color: #E53935;
-        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
-    }
 }
 
 /* --- CONTEÚDO --- */
 .container {
-    flex: 1; 
-    display: flex; 
-    align-items: stretch; 
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.imagem {
-    flex: 2.5; 
-    background: url(../Imagens/redefinir\ senha.png) left 20% top 0 / contain no-repeat;
-    min-width: 320px;
-    min-height: 750px; 
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.imagem img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    display: block;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.3;
-    }
-}
-
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 20px #E53935, 0 0 30px #E53935;
-    }
-    100% {
-        text-shadow: 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61;
-    }
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: calc(100vh - 120px);
+    padding: 40px clamp(20px,4vw,70px);
+    z-index: 1;
 }
 
 .formulario {
-    flex: 1;
-    padding: 40px;
-    max-width: 500px;
-    min-width: 350px;
+    flex: 0 1 520px;
+    padding: 40px 30px;
+    border-radius: 12px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    color: #fff;
-    font-weight: bolder;
-    gap: 30px;
+    align-items: center;
 }
 
-.formulario h1 {
-    font-family: Arial, sans-serif;
-    font-weight: bolder;
-    font-size: 36px;
-    margin-bottom: 30px;
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* título */
+form h1 {
+    font-size: 30px;
+    font-weight: 800;
     color: #fff;
     position: relative;
     width: fit-content;
-    align-self: flex-start;
 }
 
-.formulario h1::after {
+form h1::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -8px;
     height: 4px;
-    width: 100%;
+    width: 80%;
     background-color: #E53935;
-    transform: scaleX(1);
-    transform-origin: left;
-    transition: transform 0.4s ease-in-out;
-    box-shadow: 0 3px 13px #E53935;
+    box-shadow: 0 3px 13px red;
 }
 
-.formulario h1:hover::after {
-    transform: scaleX(0.4);
-}
-
+/* texto */
 .frase {
     font-size: 18px;
-    margin-bottom: 30px;
     color: #ccc;
-    font-weight: normal;
+    font-weight: 400;
 }
 
-.formulario label {
+/* inputs */
+form label {
     font-size: 16px;
-    margin-bottom: 8px;
-    color: #fff;
     font-weight: 600;
 }
 
-.formulario input {
-    background-color: #000000;
-    font-family: Arial, sans-serif;
+form input {
+    background: #000;
+    border: 2px solid #444;
+    border-radius: 14px;
+    padding: 12px 14px;
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    padding: 12px 14px;
-    width: 100%; /* evitar overflow */
-    max-width: 420px;
-    border-radius: 12px;
-    border: 2px solid #444;
     color: #fff;
-    outline: none;
     transition: all 0.3s ease;
-    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
-    display: block;
 }
 
-.formulario input::placeholder {
-    color: #888;
-    font-size: 15px;
-}
-
-.formulario input:focus {
+form input:focus {
     border: 2px solid #E53935;
-    box-shadow: 0px 0px 10px #E53935, inset 0px 2px 6px rgba(0, 0, 0, 0.5);
-    background-color: #222;
+    box-shadow: 0 0 10px #E53935;
+    background: #111;
+    outline: none;
 }
 
+/* botão */
 .enviar-btn {
-    padding: 10px 40px;
+    padding: 12px;
     cursor: pointer;
-    width: 200px;
-    max-width: 220px;
+    width: 100%;
     background: #E53935;
     color: #fff;
-    text-align: center;
-    font-family: Arial, sans-serif;
     font-weight: 800;
     font-size: 18px;
-    border-radius: 25px;
-    margin: 0 auto 30px; /* centraliza */
-    border: 2px solid #fff;
-    animation: neonBtn 2.5s infinite alternate ease-in-out;
+    border-radius: 14px;
+    border: 2px solid #E53935;
     transition: all 0.3s ease;
-    display: block;
 }
 
 .enviar-btn:hover {
     transform: scale(1.05);
 }
 
-@keyframes neonBtn {
-    0% {
-        background: #E53935;
-        border-color: #E53935;
-        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
-    }
-    50% {
-        background: #ff6f61;
-        border-color: #ff6f61;
-        box-shadow: 0 0 15px #ff6f61, 0 0 35px #ff6f61;
-    }
-    100% {
-        background: #E53935;
-        border-color: #E53935;
-        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
-    }
+/* --- RESPONSIVIDADE --- */
+
+/* entre 1040px e 1200px → remove imagem */
+@media (max-width: 1200px) and (min-width: 1040px) {
+    body::before { display: none; }
+    .container { justify-content: center; }
+    .formulario { margin-right: 0; max-width: 600px; }
 }
 
-/* --- Responsivo --- */
-@media (max-width: 900px) {
-    .container { 
-        flex-direction: column; 
-        padding: 20px 18px; 
-        gap: 20px; 
-    }
-    .imagem { 
-        width: 100%; 
-        margin: 0 0 22px; 
-        min-height: 400px; 
-        background-position: center top; 
-    }
-    .formulario { 
-        max-width: 600px; 
-        width: 100%; 
-    }
+/* abaixo de 1024px → centraliza form */
+@media (max-width: 1024px) {
+    body::before { display: none; }
+    .container { justify-content: center; padding: 20px; }
+    .formulario { max-width: 520px; }
+    form h1 { font-size: 28px; }
 }
 
-@media (max-width: 520px) {
-    .imagem { min-height: 340px; }
-    .enviar-btn { width: 100%; max-width: 100%; }
-    .formulario input { max-width: 100%; }
+/* tablet */
+@media (max-width: 768px) {
+    .formulario { max-width: 420px; padding: 30px 20px; }
+    form h1 { font-size: 26px; }
+    .enviar-btn { font-size: 16px; }
+}
+
+/* celular */
+@media (max-width: 480px) {
+    .formulario { max-width: 100%; padding: 24px 16px; }
+    form h1 { font-size: 22px; }
+    .frase { font-size: 16px; }
+    .enviar-btn { max-width: 100%; }
 }
