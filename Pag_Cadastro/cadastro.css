@@ -51,17 +51,9 @@ body {
     }
 }
 
-.logo-in {
-    background-color: #E53935;
-    color: #fff;
-    padding: 5px 8px;
-    font-weight: bolder;
-    font-size: 25px;
-}
-
-.logo-text {
-    color: #fff;
-    font-size: 25px;
+.logo img {
+    width: 235px;
+    height: 66px;
 }
 
 .container {
@@ -74,11 +66,11 @@ body {
 
 .image {
     flex: 3;
-   /* border: 2px solid rgb(188, 188, 188);*/
     background: url(../Imagens/cadastre-se.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    max-width: 100%;
     min-width: 300px;
     min-height: 400px;
 }

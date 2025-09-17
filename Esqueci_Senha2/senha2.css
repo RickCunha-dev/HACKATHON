@@ -159,6 +159,10 @@ object-fit: contain;
     transform: scaleX(0.4); 
 }
 
+.form label {
+    font-size: 21px;
+}
+
 .formulario input {
     background-color: #000000;
     font-family: Arial, sans-serif;

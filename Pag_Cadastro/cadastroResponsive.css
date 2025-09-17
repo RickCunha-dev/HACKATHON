@@ -1,3 +1,12 @@
+@media screen and (max-width: 1900px) and (min-width: 1440px) {
+  .image {
+    flex: 2;                
+    background-size: cover; 
+    min-height: 350=px;    
+  }
+}
+
+
 @media screen and (min-width: 1281px){
   .botoes-redes-socias,
   .ou {
@@ -54,7 +63,7 @@
   }
 
   .image {
-    display: none; /* remove a imagem em celulares */
+    display: none; 
   }
 
   .formulario {

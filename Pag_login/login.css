@@ -129,7 +129,7 @@ body::before {
 
 /* LABEL */
 .label {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* INPUTS */
@@ -195,8 +195,8 @@ body::before {
 
 /* BOTÃO */
 .btn-login {
-    padding: 8px;
-    width: 150px;
+    padding: 13px;
+    width: 250px;
     background: #E53935;
     color: #fff;
     font-weight: 800;
