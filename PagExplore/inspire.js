@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Menu hambúrguer =====
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  // Busca e filtros
+  let selectedCategory = 'todos';
+  let searchTerm = '';
 
   function openMenu() {
     if (!navToggle || !navMenu) return;
@@ -42,18 +45,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Filtro de categorias =====
   const botoesFiltro = document.querySelectorAll('.categoria-filtros button');
   const cards = document.querySelectorAll('.perfil-card');
+  function applyFilters() {
+    const term = searchTerm.trim().toLowerCase();
+    cards.forEach(card => {
+      const matchesCategory = (selectedCategory === 'todos') || (card.dataset.categoria === selectedCategory);
+      let matchesSearch = true;
+      if (term) {
+        const info = card.querySelector('.perfil-info');
+        const text = info ? info.textContent.toLowerCase() : '';
+        matchesSearch = text.includes(term);
+      }
+      card.style.display = (matchesCategory && matchesSearch) ? 'block' : 'none';
+    });
+  }
+
   if (botoesFiltro.length && cards.length) {
     botoesFiltro.forEach(botao => {
       botao.addEventListener('click', () => {
-        const categoria = botao.id.replace('-cat', '');
-        cards.forEach(card => {
-          if (card.dataset.categoria === categoria || categoria === 'todos') {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        selectedCategory = botao.id.replace('-cat', '');
+        applyFilters();
       });
+    });
+  }
+
+  // ===== Busca por texto =====
+  const searchForm = document.querySelector('.search-form');
+  const searchInput = searchForm ? searchForm.querySelector('input') : null;
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      searchTerm = searchInput.value || '';
+      applyFilters();
+    });
+    searchInput.addEventListener('input', () => {
+      searchTerm = searchInput.value || '';
+      applyFilters();
     });
   }
 
