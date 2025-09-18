@@ -201,3 +201,4 @@ if (modal && abrirModalBtn && fecharModalBtn) {
         if (e.key === 'Escape') modal.style.display = 'none';
     });
 }
+

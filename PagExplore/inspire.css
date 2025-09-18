@@ -16,6 +16,11 @@ body {
     color: #fff;
 }
 
+/*Configuração do ícone*/ 
+.hidden {
+    display: none !important;
+}
+
 main {
     flex: 1;
 }
