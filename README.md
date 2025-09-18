@@ -1,79 +1,111 @@
-# HACKATHON - Plataforma de Portfólios
+# Infinity School – Plataforma de Portfólios (HACKATHON)
 
-Projeto front-end estático focado em permitir que usuários explorem conteúdo (Blog), encontrem inspiração em outros profissionais (Inspire-se) e acessem fluxos de autenticação (Login / Cadastro / Redefinição).
+Projeto front‑end estático para exposição de portfólios, exploração de conteúdos e fluxo inicial de autenticação. Desenvolvido em HTML/CSS/JS puro, focado em responsividade e UX simples.
 
 ## Visão Geral
-- **Blog**: Página com artigos externos curados (links) e call-to-action para começar.
-- **Inspire-se**: Página com grid filtrável de perfis / projetos por categoria.
-- **Login / Cadastro**: Fluxos de autenticação (estrutura inicial) para futura integração com backend.
-- **Responsividade**: Menu hambúrguer com clonagem dinâmica de botões (Login / Cadastre-se / Ícone de usuário) em telas menores.
-- **Acessibilidade**: Uso de `aria-label` e `aria-expanded` no botão do menu.
-- **Modal de Políticas**: Implementação de abertura/fechamento (Esc, clique fora, botão fechar).
+- Blog: curadoria de links e materiais para carreira.
+- Inspire‑se: grade de projetos/perfis com busca por texto e filtros por categoria.
+- Login/Cadastro: telas base para futura integração com backend.
+- Acessibilidade e UX: navegação por teclado no menu mobile, aria‑labels e modais fechando por Esc/clique fora.
 
-## Estrutura de Pastas
+## Estrutura do Projeto
 ```
-Blog/
-  blog.html
-  blog.css
-  blog.js
-PagExplore/
-  inspire-se.html
-  inspire.css
-  inspire.js
-Pag_login/
-  index.html (login principal - presumido)
-  ... (outros assets de autenticação)
-paginaCadastro/
-  cadastro.html
-  cadastro.css
-  cadastro.js
-Imagens/ e Icones/ (ativos estáticos)
+.
+├── Blog/
+│   ├── blog.html
+│   └── blog.css
+├── Email-enviado/
+│   ├── enviado.html
+│   └── enviado.css
+├── Esqueci_Senha/
+│   ├── senha.html
+│   └── senha.css
+├── Esqueci_Senha2/
+│   ├── senha2.html
+│   ├── senha2.css
+│   └── senha2.js
+├── PagExplore/
+│   ├── inspire-se.html
+│   ├── inspire.css
+│   └── inspire.js
+├── Pag_Cadastro/
+│   ├── cadastro.html
+│   ├── cadastro.css
+│   ├── cadastroResponsive.css
+│   └── script.js
+├── Pag_login/
+│   ├── login.html
+│   ├── login.css
+│   └── login.js
+├── home/
+│   ├── home.html
+│   ├── home.css
+│   └── home.js
+├── portfolio/
+│   ├── portfolio.html
+│   ├── portfolio.css
+│   └── portfolio.js
+├── profile/
+│   ├── profile.html
+│   ├── profile.css
+│   └── profile.js
+├── images/            # imagens gerais (logotipo, fotos de equipe etc.)
+├── Imagens/           # imagens específicas de páginas (ex.: assets do Explore)
+├── Icones/            # ícones (svg/png)
+├── index.html         # redirecionamento simples (pode ser ajustado no futuro)
+└── README.md
 ```
 
-## Funcionalidades Principais
-1. **Menu Responsivo**
-   - Botões de ação são clonados para dentro do menu em telas <= 768px.
-   - Ícone de usuário aparece centralizado abaixo dos botões no menu mobile.
-2. **Filtro de Categorias (Inspire-se)**
-   - Mostra/esconde cards com base no atributo `data-categoria`.
-3. **Modal de Políticas**
-   - Abrir via link
-   - Fechar por: botão X, clique fora ou tecla Esc.
-4. **Animações**
-   - Hover com efeito neon nos botões e ícone de usuário.
-5. **Ajustes de Acessibilidade e UX**
-   - Sem sublinhado/borda indesejada em elementos de ação clonados.
+## Páginas Principais
+- Home: `home/home.html`
+- Explorar (Inspire‑se): `PagExplore/inspire-se.html`
+- Blog: `Blog/blog.html`
+- Login: `Pag_login/login.html`
+- Cadastro: `Pag_Cadastro/cadastro.html`
+- Esqueci a Senha: `Esqueci_Senha/senha.html`
+- Redefinir Senha: `Esqueci_Senha2/senha2.html`
+- Portfólio (exemplo): `portfolio/portfolio.html`
+- Perfil (exemplo): `profile/profile.html`
+- Email enviado (feedback): `Email-enviado/enviado.html`
+
+## Destaques de Funcionalidade
+- Menu hambúrguer com injeção de botões/ícone no mobile.
+- Busca no Explore combinada com filtro de categorias.
+- Modal de políticas (abre/fecha por botão, clique fora e Esc).
+- Alternar visibilidade da senha (olhinho) nas páginas de cadastro.
+- Favicons adicionados (SVG/PNG/apple‑touch‑icon).
 
 ## Como Rodar Localmente
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/RickCunha-dev/HACKATHON.git
-   ```
-2. Abra a pasta no VS Code ou outro editor.
-3. Sirva com uma extensão estática (ex: Live Server) ou abra diretamente os arquivos `.html` no navegador.
+Opção 1 – Abrir diretamente no navegador:
+- Clique duas vezes em qualquer arquivo `.html` (ex.: `home/home.html`).
 
-## Pontos para Evolução
-- Integrar autenticação real (API / backend).
-- Criar componente de cadastro completo e validação de formulário.
-- Adicionar paginação ou lazy-load para cards de perfis.
-- Internacionalização (i18n) futura.
-- Minificação e build (Vite / Webpack) se crescer.
+Opção 2 – Servir com Live Server (VS Code):
+1. Abra a pasta do projeto no VS Code.
+2. Instale a extensão “Live Server”.
+3. Abra a página desejada (ex.: `home/home.html`) e clique em “Go Live”.
 
-## Boas Práticas Implementadas
-- Separação de responsabilidades (HTML/CSS/JS simples e organizados).
-- Classes utilitárias previsíveis.
-- Evita duplicação de elementos com marcador `.__cloned`.
+Requisitos: apenas um navegador moderno; não há build.
 
-## Melhorias Futuras Sugestivas
-| Área | Ideia |
-|------|-------|
-| SEO | Metatags por página, sitemap, favicon | 
-| Performance | Otimizar imagens (WebP), lazy-loading | 
-| Acessibilidade | Foco visível e roles adicionais | 
-| Estado | Migrar clonagem para abordagem declarativa (ex: framework) | 
+## Convenções e Notas
+- Estrutura de assets: `images/`, `Imagens/` e `Icones/` agrupam recursos do site.
+- Evite subir arquivos de mídia muito pesados (GIFs/vídeos). Prefira WebP/MP4 e/ou Git LFS.
+- Caminhos relativos são utilizados entre as páginas; ajuste se mover arquivos.
+
+## Roadmap Sugerido
+- Integração com backend (autenticação real e perfis dinâmicos).
+- Otimização de imagens (WebP), lazy‑loading e minificação.
+- SEO (metatags por página, sitemap).
+- Testes de acessibilidade (foco visível, roles adicionais).
+
+## Contribuição
+1. Faça um fork do repositório.
+2. Crie um branch de feature: `git checkout -b feat/nome-da-feature`.
+3. Commit suas mudanças: `git commit -m "feat: sua mensagem"`.
+4. Push para o branch: `git push origin feat/nome-da-feature`.
+5. Abra um Pull Request.
 
 ## Autor
-Projeto mantido por: **RickCunha-dev** (Github).
+Manutenção: [RickCunha-dev](https://github.com/RickCunha-dev)
 
----
-Se quiser, posso acrescentar um diagrama de navegação ou iniciar um setup com Vite/React futuramente. É só pedir.
+—
+Precisa que eu inclua prints/preview no README ou um GIF curto de demonstração? Posso preparar essa seção também.
