@@ -57,6 +57,7 @@ header {
 .nav-menu a::after {
     content: "";
     position: absolute;
+    top: 23px;
     left: 0;
     bottom: 0;
     width: 0;
@@ -69,7 +70,7 @@ header {
     width: 100%;
 }
 
-/* Remover linha inferior/underline para botões e ícone dentro do menu */
+
 .nav-menu .btn,
 .nav-menu .user-btn { 
     position: relative; 
@@ -80,7 +81,8 @@ header {
 .nav-menu .user-btn:hover::after { 
     content: none !important; 
     width:0 !important; 
-    height:0 !important; }
+    height:0 !important; 
+}
 .nav-menu .user-btn.__cloned { 
     margin-left:0; 
 }
@@ -171,7 +173,6 @@ header {
     padding: 4px;
     position: relative;
     font-size: 28px;
-    /* Mantém o botão acima do overlay do menu para mostrar o X */
     z-index: 250;
 }
 
