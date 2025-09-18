@@ -1,21 +1,70 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* RESET */
+/* ===== ROOT ===== */
+:root {
+    /* Fontes */
+    --font-principal: 'Raleway', sans-serif;
+    --font-alternativa: Arial, sans-serif;
+
+    /* Cores */
+    --cor-fundo: #000;
+    --cor-branco: #fff;
+    --cor-vermelho: #E53935;
+    --cor-vermelho-claro: #ff6f61;
+    --cor-vermelho-escuro: #af1103;
+    --cor-borda-input: #444;
+    --cor-texto-secundario: #ccc;
+    --fundo-input-focus: #111;
+
+    /* Header */
+    --header-height: 100px;
+    --header-box-shadow: 0px 4px 10px #E53935;
+
+    /* Formulário */
+    --form-max-width: 560px;
+    --form-padding: clamp(34px,4vw,54px) clamp(30px,3vw,46px);
+    --form-bg: rgba(0,0,0,0.82);
+    --form-border-radius: 12px;
+    --form-gap: 50px;
+
+    /* Inputs */
+    --input-padding: 12px 14px;
+    --input-font-size: 18px;
+    --input-font-weight: 600;
+    --input-border-radius: 14px;
+    --input-border: 2px solid var(--cor-borda-input);
+
+    /* Botão */
+    --btn-width: 250px;
+    --btn-font-size: 18px;
+    --btn-padding: 12px;
+    --btn-border-radius: 14px;
+    --btn-animation-duration: 2.5s;
+
+    /* Título */
+    --h1-font-size: 30px;
+    --h1-border-height: 4px;
+    --h1-border-color: var(--cor-vermelho);
+
+    /* Texto secundário */
+    --texto-secundario-font-size: 18px;
+}
+
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Raleway", sans-serif !important;
+    font-family: var(--font-principal) !important;
 }
 
 body {
-    background: #000;
-    color: #fff;
+    background: var(--cor-fundo);
+    color: var(--cor-branco);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 120px;
+    padding-top: var(--header-height);
     overflow-x: hidden;
     position: relative;
 }
@@ -30,17 +79,17 @@ body::before {
     z-index: 0;
 }
 
-/* --- HEADER --- */
+/* ===== HEADER ===== */
 header {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
-    height: 100px;
+    height: var(--header-height);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
-    box-shadow: 0px 4px 10px #E53935;
+    background: var(--cor-fundo);
+    box-shadow: var(--header-box-shadow);
     z-index: 10;
 }
 
@@ -49,36 +98,34 @@ header img {
     width: auto;
 }
 
-/* --- CONTEÚDO --- */
-
+/* ===== CONTEÚDO ===== */
 .container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - var(--header-height));
     padding: 40px clamp(24px,4vw,70px);
     position: relative;
     z-index: 1;
     gap: 0;
 }
 
-
 .formulario {
-    flex: 0 1 520px;
-    padding: clamp(34px,4vw,54px) clamp(30px,3vw,46px);
-    max-width: 560px;
+    flex: 0 1 var(--form-max-width);
+    padding: var(--form-padding);
+    max-width: var(--form-max-width);
     margin-right: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: rgba(0,0,0,0.82);
+    background: var(--form-bg);
     backdrop-filter: blur(6px);
-    color: #fff;
+    color: var(--cor-branco);
     font-weight: bolder;
-    gap: 50px;
-    border-radius: 12px;
+    gap: var(--form-gap);
+    border-radius: var(--form-border-radius);
 }
 
 form {
@@ -86,16 +133,16 @@ form {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    font-family: "Raleway", sans-serif !important;
+    font-family: var(--font-principal) !important;
 }
 
 /* título */
 form h1 {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-alternativa);
     font-weight: bolder;
-    font-size: 30px;
+    font-size: var(--h1-font-size);
     margin-bottom: 7%;
-    color: #fff;
+    color: var(--cor-branco);
     position: relative;
     margin-right: 140px;
     width: fit-content;
@@ -106,9 +153,9 @@ form h1::after {
     position: absolute;
     left: 0;
     bottom: -8px;
-    height: 4px;
+    height: var(--h1-border-height);
     width: 80%;
-    background-color: #E53935;
+    background-color: var(--h1-border-color);
     transform: scaleX(1);
     transform-origin: left;
     transition: transform 0.4s ease-in-out;
@@ -120,9 +167,9 @@ form h1:hover::after {
     transform: scaleX(0.4);
 }
 
-/* texto */
+/* texto secundário */
 .frase {
-    font-size: 18px;
+    font-size: var(--texto-secundario-font-size);
     color: #ccc;
     font-weight: 400;
 }
@@ -134,40 +181,39 @@ form label {
 }
 
 form input {
-    background: #000;
-    border: 2px solid #444;
-    border-radius: 14px;
-    padding: 12px 14px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #fff;
+    background: var(--cor-fundo);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    padding: var(--input-padding);
+    font-size: var(--input-font-size);
+    font-weight: var(--input-font-weight);
+    color: var(--cor-branco);
     transition: all 0.3s ease;
 }
 
 form input:focus {
-    border: 2px solid #E53935;
-    box-shadow: 0 0 10px #E53935;
-    background: #111;
+    border: 2px solid var(--cor-vermelho);
+    box-shadow: 0 0 10px var(--cor-vermelho);
+    background: var(--fundo-input-focus);
     outline: none;
 }
 
 /* botão */
-
 .enviar-btn {
-    padding: 12px;
+    padding: var(--btn-padding);
     cursor: pointer;
-    width: 250px;
-    background: #E53935;
-    color: #fff;
+    width: var(--btn-width);
+    background: var(--cor-vermelho);
+    color: var(--cor-branco);
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-alternativa);
     font-weight: 800;
-    font-size: 18px;
-    border-radius: 14px;
+    font-size: var(--btn-font-size);
+    border-radius: var(--btn-border-radius);
     margin-left: 20%;
     margin-top: 10%;
-    border: 2px solid #E53935;
-    animation: neonBtn 2.5s infinite alternate ease-in-out;
+    border: 2px solid var(--cor-vermelho);
+    animation: neonBtn var(--btn-animation-duration) infinite alternate ease-in-out;
     transition: all 0.3s ease;
 }
 
@@ -175,41 +221,41 @@ form input:focus {
     transform: scale(1.05);
 }
 
+/* ===== ANIMAÇÕES ===== */
 @keyframes neonBtn {
     0% {
-        background: #E53935;
-        border-color: #E53935;
-        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
     }
     50% {
-        background: #ff6f61;
-        border-color: #ff6f61;
-        box-shadow: 0 0 15px #ff6f61, 0 0 35px #ff6f61;
+        background: var(--cor-vermelho-claro);
+        border-color: var(--cor-vermelho-claro);
+        box-shadow: 0 0 15px var(--cor-vermelho-claro), 0 0 35px var(--cor-vermelho-claro);
     }
     100% {
-        background: #E53935;
-        border-color: #E53935;
-        box-shadow: 0 0 8px #E53935, 0 0 16px #E53935;
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
     }
 }
 
 @keyframes neon {
     0% {
-        border-bottom-color: #E53935;
-        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0px 0px 10px var(--cor-vermelho);
     }
     50% {
-        border-bottom-color: #af1103;
-        box-shadow: 0px 0px 15px #a20e00, 0px 0px 30px #ff6f61;
+        border-bottom-color: var(--cor-vermelho-escuro);
+        box-shadow: 0px 0px 15px #a20e00, 0 0 30px var(--cor-vermelho-claro);
     }
     100% {
-        border-bottom-color: #E53935;
-        box-shadow: 0px 0px 5px #E53935, 0px 0px 10px #E53935;
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0 0 10px var(--cor-vermelho);
     }
 }
 
-/* --- RESPONSIVIDADE --- */
-
+/* ===== RESPONSIVIDADE ===== */
 
 /* telas médias (entre 1040px e 1200px) */
 @media (max-width: 1200px) and (min-width: 1040px) {
@@ -236,7 +282,7 @@ form input:focus {
     }
     .enviar-btn {
         margin-top: 10%;
-        width:250px;
+        width: 250px;
     }
 }
 

@@ -1,3 +1,21 @@
+:root {
+    --body-bg: #000;
+    --text-color: #fff;
+    --logo-border: #E53935;
+    --logo-box-shadow: #E53935;
+    --logo-neon-alt: #af1103;
+    --logo-neon-light: #ff6f61;
+    --input-bg: #000;
+    --input-border: #444;
+    --input-focus-border: #E53935;
+    --input-focus-bg: #111;
+    --btn-bg: #E53935;
+    --btn-border: #E53935;
+    --btn-neon-alt: #ff6f61;
+    --h1-underline: #E53935;
+    --h1-underline-shadow: red;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -11,16 +29,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: var(--text-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding-top: 120px;
-    background: #000; 
+    background: var(--body-bg);
     position: relative;
     overflow-x: hidden;
 }
-
 
 body::before {
     content: "";
@@ -44,8 +61,8 @@ body::before {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    border-bottom: 4px solid #E53935;
-    box-shadow: 0px 4px 10px #E53935;
+    border-bottom: 4px solid var(--logo-border);
+    box-shadow: 0px 4px 10px var(--logo-box-shadow);
     animation: neon 3s infinite alternate ease-in-out;
 }
 
@@ -55,9 +72,9 @@ body::before {
 }
 
 @keyframes neon {
-    0% { border-bottom-color: #E53935; box-shadow: 0 0 5px #E53935, 0 0 10px #E53935; }
-    50% { border-bottom-color: #af1103; box-shadow: 0 0 15px #a20e00, 0 0 30px #ff6f61; }
-    100% { border-bottom-color: #E53935; box-shadow: 0 0 5px #E53935, 0 0 10px #E53935; }
+    0% { border-bottom-color: var(--logo-border); box-shadow: 0 0 5px var(--logo-box-shadow), 0 0 10px var(--logo-box-shadow); }
+    50% { border-bottom-color: var(--logo-neon-alt); box-shadow: 0 0 15px #a20e00, 0 0 30px var(--logo-neon-light); }
+    100% { border-bottom-color: var(--logo-border); box-shadow: 0 0 5px var(--logo-box-shadow), 0 0 10px var(--logo-box-shadow); }
 }
 
 /* CONTAINER COM FLEX */
@@ -73,12 +90,10 @@ body::before {
     gap: 0;
 }
 
-
-
 /* FORMULÁRIO */
 .formulario {
     flex: 0 1 640px; 
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.78);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,9 +104,8 @@ body::before {
     font-weight: bolder;
     margin: 0; 
     box-sizing: border-box;
-    padding: clamp(36px,4.5vw,60px) clamp(38px,3.8vw,58px); /* ligeiro aumento interno */
+    padding: clamp(36px,4.5vw,60px) clamp(38px,3.8vw,58px);
     gap: 20px;
-    background: rgba(0,0,0,0.78); /* leve transparência para destacar sobre imagem */
 }
 
 /* TÍTULO */
@@ -116,11 +130,11 @@ body::before {
     bottom: -8px;
     height: 4px;
     width: calc(100% - 1em);
-    background-color: #E53935;
+    background-color: var(--h1-underline);
     transform: none;
     transform-origin: left;
     transition: transform 0.4s ease-in-out;
-    box-shadow: 0 3px 13px red;
+    box-shadow: 0 3px 13px var(--h1-underline-shadow);
 }
 
 .formulario h1:hover::after {
@@ -134,25 +148,25 @@ body::before {
 
 /* INPUTS */
 .formulario input {
-    background-color: #000;
+    background-color: var(--input-bg);
     font-size: 18px;
     font-weight: 600;
     margin-top: 4%;
     padding: 10px;
     width: 100%;
     border-radius: 12px;
-    border: 2px solid #444;
+    border: 2px solid var(--input-border);
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: var(--text-color);
     outline: none;
     transition: all 0.3s ease;
     box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
 }
 
 .formulario input:focus {
-    border: 2px solid #E53935;
-    box-shadow: 0 0 10px #E53935;
-    background-color: #111;
+    border: 2px solid var(--input-focus-border);
+    box-shadow: 0 0 10px var(--input-focus-border);
+    background-color: var(--input-focus-bg);
 }
 
 /* OLHINHO SENHA */
@@ -188,7 +202,7 @@ body::before {
 
 .option-links a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-color);
     font-weight: 300;
     margin-bottom: 10%;
 }
@@ -197,12 +211,12 @@ body::before {
 .btn-login {
     padding: 13px;
     width: 250px;
-    background: #E53935;
-    color: #fff;
+    background: var(--btn-bg);
+    color: var(--text-color);
     font-weight: 800;
     font-size: 16px;
     border-radius: 10px;
-    border: 2px solid #E53935;
+    border: 2px solid var(--btn-border);
     cursor: pointer;
     animation: neonBtn 2.5s infinite alternate ease-in-out;
     transition: transform 0.3s ease;
@@ -215,9 +229,9 @@ body::before {
 }
 
 @keyframes neonBtn {
-    0% { background: #E53935; border-color: #E53935; box-shadow: 0 0 8px #E53935, 0 0 16px #E53935; }
-    50% { background: #ff6f61; border-color: #ff6f61; box-shadow: 0 0 15px #ff6f61, 0 0 35px #ff6f61; }
-    100% { background: #E53935; border-color: #E53935; box-shadow: 0 0 8px #E53935, 0 0 16px #E53935; }
+    0% { background: var(--btn-bg); border-color: var(--btn-border); box-shadow: 0 0 8px var(--btn-border), 0 0 16px var(--btn-border); }
+    50% { background: var(--btn-neon-alt); border-color: var(--btn-neon-alt); box-shadow: 0 0 15px var(--btn-neon-alt), 0 0 35px var(--btn-neon-alt); }
+    100% { background: var(--btn-bg); border-color: var(--btn-border); box-shadow: 0 0 8px var(--btn-border), 0 0 16px var(--btn-border); }
 }
 
 /* OU e REDES SOCIAIS */
@@ -249,49 +263,20 @@ body::before {
 }
 
 /* RESPONSIVO */
-
-/* Tablets */
-@media (max-width: 1300px) {
-    body::before { inset: 120px 48% 0 0; }
-}
-
-@media (max-width: 1100px) {
-    body::before { inset: 120px 52% 0 0; }
-}
-
+@media (max-width: 1300px) { body::before { inset: 120px 48% 0 0; } }
+@media (max-width: 1100px) { body::before { inset: 120px 52% 0 0; } }
 @media (max-width: 1024px) {
     body::before { display: none; }
     .container { justify-content: center; padding: 140px 32px 60px 32px; }
-    .formulario {
-        max-width: 600px; /* ampliado para manter proporção em 1024px */
-        border-radius: 18px;
-        padding: 46px 42px;
-    }
+    .formulario { max-width: 600px; border-radius: 18px; padding: 46px 42px; }
     .formulario h1 { font-size: 34px; margin-bottom: 12%; }
     .btn-login { font-size: 16px; width: 200px; }
 }
-
-
-/* Celulares */
 @media (max-width: 768px) {
     .container { padding: 140px 20px 60px 20px; }
-    .formulario {
-        max-width: 400px; /* ligeiro aumento também no mobile/tablet */
-        padding: 40px 26px;
-        gap: 18px;
-        background: rgba(0,0,0,0.9);
-    }
-    /* Deixa os links lado a lado */
-    .option-links {
-        flex-direction: row; /* linha */
-        justify-content: space-between; /* cada link nas extremidades */
-        width: 100%;
-        gap: 8px;
-    }
-    .option-links a {
-        margin-bottom: 0;
-        font-size: 14px;
-    }
+    .formulario { max-width: 400px; padding: 40px 26px; gap: 18px; background: rgba(0,0,0,0.9); }
+    .option-links { flex-direction: row; justify-content: space-between; width: 100%; gap: 8px; }
+    .option-links a { margin-bottom: 0; font-size: 14px; }
     .formulario h1 { font-size: 26px; }
     .formulario input { font-size: 18px; padding: 12px; }
     .btn-login { font-size: 16px; width: 120px; margin: 40px auto; }
@@ -300,26 +285,14 @@ body::before {
     .botoes-redes-socias a { padding: 8px 8px; }
     .botoes-redes-socias img { width: 22px; height: 22px; }
 }
-
-/* Pequenos celulares */
 @media (max-width: 480px) {
     .container { padding: 140px 16px 60px 16px; }
-    .formulario {
-        max-width: 320px;
-        padding: 32px 22px;
-        gap: 18px;
-        background: rgba(0,0,0,0.92);
-    }
-    .option-links {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        gap: 10px;
-    }
+    .formulario { max-width: 320px; padding: 32px 22px; gap: 18px; background: rgba(0,0,0,0.92); }
+    .option-links { flex-direction: row; justify-content: space-between; width: 100%; gap: 10px; }
     .option-links a { margin-bottom: 0; font-size: 18px; }
     .formulario h1 { font-size: 28px; }
     .formulario input { font-size: 16px; padding: 10px; }
-    .label {font-size: 16px;}
+    .label { font-size: 16px; }
     .btn-login { font-size: 14px; width: 120px; }
     .ou { font-size: 26px; }
     .botoes-redes-socias { justify-content: center; gap: 12px; }
